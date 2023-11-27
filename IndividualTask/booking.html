@@ -1,0 +1,314 @@
+﻿<html>
+<head>
+    <title> Бронирование база данных </title>
+    <link rel="stylesheet" type="text/css" href="booking_styles.css">
+
+    </head>
+<body>
+<form class="search_body">
+            <div class="search_select_field">
+            <label for=guests>Гость</label>
+            <select id="guests" name="guests">
+                <option selected value="Все">Все</option>
+                <option value="Абрамова А.А.">Абрамова А.А.</option>
+                <option value="Астахов И.И.">Астахов И.И.</option>
+                <option value="Баранов П.В.">Баранов П.В.</option>
+                <option value="Белых К.Д.">Белых К.Д.</option>
+                <option value="Бондаренко С.С.">Бондаренко С.С.</option>
+                <option value="Борисов В.В.">Борисов В.В.</option>
+                <option value="Дворников М.А.">Дворников М.А.</option>
+                <option value="Жидкова Р.Л.">Жидкова Р.Л.</option>
+                <option value="Иванов М.С.">Иванов М.С.</option>
+                <option value="Левченко А.Г.">Левченко А.Г.</option>
+                <option value="Петров Ф.С.">Петров Ф.С.</option>
+                <option value="Садиев С.И.">Садиев С.И.</option>
+                <option value="Самарин С.С.">Самарин С.С.</option>
+                <option value="Солиева К.П.">Солиева К.П.</option>
+                <option value="Тихомиров Т.М.">Тихомиров Т.М.</option>
+                <option value="Тощаков П.С.">Тощаков П.С.</option>
+                <option value="Туполев И.Д.">Туполев И.Д.</option>
+                <option value="Федоров П.Р.">Федоров П.Р.</option>
+                <option value="Хованец Г.П.">Хованец Г.П.</option>
+                <option value="Шевцова А.Р.">Шевцова А.Р.</option>
+                
+            </select>
+        </div>
+            <div class="search_select_field">
+            <label for=statuses>Статус бронирования</label>
+            <select id="statuses" name="statuses">
+                <option selected value="Все">Все</option>
+                <option value="Проживал(а)">Проживал(а)</option>
+                <option value="Бронировал(а)">Бронировал(а)</option>
+                <option value="Отменил(а) бронирование">Отменил(а) бронирование</option>
+                <option value="Не проживал(а)">Не проживал(а)</option>
+                
+            </select>
+        </div>
+            <input class="search_button" type="submit" value="Найти">
+        </form>
+
+        <p class="table_header">
+            <b>Бронирование </b>
+        </p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Фамилия</th><th>Статус</th><th>Количество</th>
+            </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td> Абрамова А.А. </td>
+                    <td> Проживал(а) </td>
+                    <td> 5 </td>
+                    </tr>
+                <tr>
+                    <td> Абрамова А.А. </td>
+                    <td> Отменил(а) бронирование </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Абрамова А.А. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Астахов И.И. </td>
+                    <td> Проживал(а) </td>
+                    <td> 7 </td>
+                    </tr>
+                <tr>
+                    <td> Астахов И.И. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 6 </td>
+                    </tr>
+                <tr>
+                    <td> Баранов П.В. </td>
+                    <td> Проживал(а) </td>
+                    <td> 4 </td>
+                    </tr>
+                <tr>
+                    <td> Баранов П.В. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 2 </td>
+                    </tr>
+                <tr>
+                    <td> Белых К.Д. </td>
+                    <td> Проживал(а) </td>
+                    <td> 7 </td>
+                    </tr>
+                <tr>
+                    <td> Белых К.Д. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 2 </td>
+                    </tr>
+                <tr>
+                    <td> Бондаренко С.С. </td>
+                    <td> Не проживал(а) </td>
+                    <td> - </td>
+                    </tr>
+                <tr>
+                    <td> Борисов В.В. </td>
+                    <td> Проживал(а) </td>
+                    <td> 7 </td>
+                    </tr>
+                <tr>
+                    <td> Борисов В.В. </td>
+                    <td> Отменил(а) бронирование </td>
+                    <td> 2 </td>
+                    </tr>
+                <tr>
+                    <td> Борисов В.В. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Дворников М.А. </td>
+                    <td> Проживал(а) </td>
+                    <td> 4 </td>
+                    </tr>
+                <tr>
+                    <td> Дворников М.А. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 4 </td>
+                    </tr>
+                <tr>
+                    <td> Жидкова Р.Л. </td>
+                    <td> Проживал(а) </td>
+                    <td> 2 </td>
+                    </tr>
+                <tr>
+                    <td> Жидкова Р.Л. </td>
+                    <td> Отменил(а) бронирование </td>
+                    <td> 2 </td>
+                    </tr>
+                <tr>
+                    <td> Жидкова Р.Л. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Иванов М.С. </td>
+                    <td> Проживал(а) </td>
+                    <td> 5 </td>
+                    </tr>
+                <tr>
+                    <td> Иванов М.С. </td>
+                    <td> Отменил(а) бронирование </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Иванов М.С. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 3 </td>
+                    </tr>
+                <tr>
+                    <td> Левченко А.Г. </td>
+                    <td> Проживал(а) </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Левченко А.Г. </td>
+                    <td> Отменил(а) бронирование </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Левченко А.Г. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 2 </td>
+                    </tr>
+                <tr>
+                    <td> Петров Ф.С. </td>
+                    <td> Проживал(а) </td>
+                    <td> 3 </td>
+                    </tr>
+                <tr>
+                    <td> Петров Ф.С. </td>
+                    <td> Отменил(а) бронирование </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Петров Ф.С. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Садиев С.И. </td>
+                    <td> Проживал(а) </td>
+                    <td> 7 </td>
+                    </tr>
+                <tr>
+                    <td> Садиев С.И. </td>
+                    <td> Отменил(а) бронирование </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Садиев С.И. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 2 </td>
+                    </tr>
+                <tr>
+                    <td> Самарин С.С. </td>
+                    <td> Проживал(а) </td>
+                    <td> 4 </td>
+                    </tr>
+                <tr>
+                    <td> Самарин С.С. </td>
+                    <td> Отменил(а) бронирование </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Самарин С.С. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 2 </td>
+                    </tr>
+                <tr>
+                    <td> Солиева К.П. </td>
+                    <td> Проживал(а) </td>
+                    <td> 2 </td>
+                    </tr>
+                <tr>
+                    <td> Солиева К.П. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 2 </td>
+                    </tr>
+                <tr>
+                    <td> Тихомиров Т.М. </td>
+                    <td> Проживал(а) </td>
+                    <td> 4 </td>
+                    </tr>
+                <tr>
+                    <td> Тихомиров Т.М. </td>
+                    <td> Отменил(а) бронирование </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Тихомиров Т.М. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 3 </td>
+                    </tr>
+                <tr>
+                    <td> Тощаков П.С. </td>
+                    <td> Проживал(а) </td>
+                    <td> 5 </td>
+                    </tr>
+                <tr>
+                    <td> Тощаков П.С. </td>
+                    <td> Отменил(а) бронирование </td>
+                    <td> 2 </td>
+                    </tr>
+                <tr>
+                    <td> Тощаков П.С. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Туполев И.Д. </td>
+                    <td> Проживал(а) </td>
+                    <td> 6 </td>
+                    </tr>
+                <tr>
+                    <td> Туполев И.Д. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 2 </td>
+                    </tr>
+                <tr>
+                    <td> Федоров П.Р. </td>
+                    <td> Проживал(а) </td>
+                    <td> 5 </td>
+                    </tr>
+                <tr>
+                    <td> Федоров П.Р. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 3 </td>
+                    </tr>
+                <tr>
+                    <td> Хованец Г.П. </td>
+                    <td> Проживал(а) </td>
+                    <td> 4 </td>
+                    </tr>
+                <tr>
+                    <td> Хованец Г.П. </td>
+                    <td> Отменил(а) бронирование </td>
+                    <td> 3 </td>
+                    </tr>
+                <tr>
+                    <td> Шевцова А.Р. </td>
+                    <td> Проживал(а) </td>
+                    <td> 4 </td>
+                    </tr>
+                <tr>
+                    <td> Шевцова А.Р. </td>
+                    <td> Отменил(а) бронирование </td>
+                    <td> 1 </td>
+                    </tr>
+                <tr>
+                    <td> Шевцова А.Р. </td>
+                    <td> Бронировал(а) </td>
+                    <td> 2 </td>
+                    </tr></tbody>
+        </table>
+    
+</body>
+</html>

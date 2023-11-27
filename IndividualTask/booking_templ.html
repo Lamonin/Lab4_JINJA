@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title> Бронирование база данных </title>
+    <link rel="stylesheet" type="text/css" href="booking_styles.css">
+
+    {% macro render_table(table_name, relation) %}
+        <p class="table_header">
+            <b>{{ table_name }} </b>
+        </p>
+        {% set n = len(relation) -%}
+        <table class="table">
+            <thead>
+            <tr>
+                {% for name in relation.dtypes.index -%}
+                    <th>{{ name }}</th>
+                {%- endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in range(n) %}
+                <tr>
+                    {% for name in relation.dtypes.index -%}
+                        <td> {{ relation.loc[(i, name)] }} </td>
+                    {% endfor -%}
+                </tr>
+            {%- endfor -%}
+            </tbody>
+        </table>
+    {% endmacro %}
+
+    {%- macro render_select(id, label, items, selected_index) -%}
+        <div class="search_select_field">
+            <label for={{ id }}>{{ label }}</label>
+            <select id="{{ id }}" name="{{ id }}">
+                {% set n = len(items) -%}
+                {%- for i in range(n) -%}
+                    {%- set value = items.iloc[(i, 0)] -%}
+                    <option {%- if i == selected_index %} selected {%- endif %} value="{{ value }}">{{ value }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    {%- endmacro -%}
+
+    {%- macro render_search() -%}
+        <form class="search_body">
+            {{ render_select("guests", "Гость", guests_list, guest_index) }}
+            {{ render_select("statuses", "Статус бронирования", status_list, status_index) }}
+            <input class="search_button" type="submit" value="Найти">
+        </form>
+    {%- endmacro -%}
+</head>
+<body>
+{{ render_search() }}
+{{ render_table("Бронирование", booking_info) }}
+</body>
+</html>

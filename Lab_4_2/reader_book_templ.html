@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title> Карточка читателя </title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    {% macro render_table(table_name, relation) %}
+        <p class="table_header">
+            <b>{{ table_name }} </b>
+        </p>
+        <!-- количество строк в таблице -->
+        {% set n = len(relation) -%}
+        <table class="table width_100">
+            <!-- формируем заголовок таблицы (имена столбцов) -->
+            <tr>
+                {%- for name in relation.dtypes.index -%}
+                    <th>{{ name }}</th>
+                {%- endfor -%}
+            </tr>
+
+            <tbody>
+            <!-- для всех строк таблицы -->
+            {% for i in range(n) -%}
+                <tr>
+                    <!-- выводим значение каждого столбца -->
+                    {%- for name in relation.dtypes.index -%}
+                        {% if name == "Дата_возврата" %}
+                            {% set return_date = relation.loc[i, name] %}
+                            <td>
+                                {%- if return_date == None -%}
+                                    <input type="button" value="Сдать">
+                                {%- else -%}
+                                    {{ return_date }}
+                                {%- endif -%}
+                            </td>
+                        {% else %}
+                            <td> {{ relation.loc[i, name] }}</td>
+                        {% endif %}
+                    {%- endfor -%}
+                </tr>
+            {%- endfor -%}
+            </tbody>
+        </table>
+    {% endmacro %}
+
+    {% macro render_list(list_name, id_col, display_col, combo_box, selected_id) %}
+        <!-- Создаем поле со списком -->
+        <select name={{ list_name }}>
+            {% set n = len(combo_box) %}
+            <!-- формируем строки списка (каждое значение поля
+			reader_name - строка списка) в виде
+			<option [selected] value = код_читателя> ФИО </option>
+			-->
+            {% for i in range(n) %}
+                {% set id_r = combo_box.loc[i, id_col] %}
+                <!-- атрибут value элемента будет совпадать с id читателя -->
+                {% if id_r == selected_id %}
+                    <!-- если код читателя из таблицы совпадает с кодом
+					текущего читателя устанавливаем атрибут selected -->
+                    <option selected value={{ id_r }}>
+                        {% else %}
+                    <option value={{ id_r }}>
+                {% endif %}
+            {{ combo_box.loc[i, display_col] }}
+            </option>
+            {% endfor %}
+        </select>
+    {% endmacro %}
+</head>
+<body>
+<p>
+<form>
+    Читатель:
+    {{ render_list("reader", "reader_id", "reader_name", combo_box, reader_id) }}
+    <input type="submit" value="Найти">
+</form>
+</p>
+<!-- вызвать макрос render_table с параметрами
+"Карточка" и DataFrame book_reader
+-->
+<div>
+    {{ render_table("Карточка", book_reader) }}
+</div>
+</body>
+</html>
